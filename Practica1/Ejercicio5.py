@@ -1,0 +1,2 @@
+nombre= input("Ingrese su nombre: ")
+print("Hola", nombre) #Si usamos una coma en lugar de un + el programa automaticamente va a poner un espacio entre la primera parte del texto y lo que haya despues de la coma.

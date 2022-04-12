@@ -1,0 +1,6 @@
+num = input("Ingrese un numero: ") #Noten que aca no transformamos el texto que recibimos en un numero. Por que? Porque si tratamos de convertir un punto "." en un numero el programa nos va a tirar error. Entonces, primero comparamos que el numero ingresado no sea un punto "." y DESPUES lo convertimos a un numero.
+total = 0 #Aca vamos a ir sumando todos los numeros ingresados. Esta variable la inicializamos en 0 porque si lo primero que entra es el punto "." eso no lo queremos sumar.
+while (num != "."): #Esto pregunta si el numero ingresado es distino de un punto. Si es asi, ejecuta el codigo indentado.
+    total += int(num) #Ahora si, transformamos el numero ingresado de texto a un numero entero y se lo sumamos a total (que inicialmente tenia un 0)
+    num = input("Ingrese un numero: ") #Y aca volvemos a decir que ingrese otro numero.
+print(f"La suma de todos los numeros ingresados es de: {total}") #Nuevamente usamos formateo de texto (el f antes de las comillas). Acostumbrense a usar esto porque es recontra util.

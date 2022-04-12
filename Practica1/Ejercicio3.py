@@ -1,0 +1,3 @@
+#Esta estructura repite lo que este identado dentro de la misma (en nuetro caso print(("Hola Mundo!")) tres veces. Lo que determina la cantidad de repeticiones es el numero dentro del "range(3)" asi que si cambian ese numero el codigo se puede repetir mas o menos veces.)
+for numero in range(3): 
+    print("Hola Mundo!") #Este codigo esta "identado". Que significa eso? Que el codigo esta corrido mas a la derecha que lo que venia antes. Esto le dice al programa que SOLO ejecute esta parte del codigo de acuerdo a lo que diga la linea de codigo antes que NO estaba identada. En este caso, la linea no identada dice que el codigo identado tiene que ejecutarse 3 veces.

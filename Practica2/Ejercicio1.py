@@ -1,0 +1,7 @@
+caracter = input("Ingrese un caracter: ")
+match (caracter): #Esta es una nueva estructura de control. Lo que hace el "match" Es pregunta si la vartiable que esta dentro de los parantesis (en nuestro caso seria "caracter") es igual a alguno de los casos mas abajo, es decir, compara la variable a la derecha del "match" dentro de los parentesis con cada variable a la derecha de un "case".
+    case ("a") | ("A") | ("e") | ("E") | ("i") | ("I") | ("o") | ("O") | ("u") | ("U"): #Esto lo que hace es comparar la variable que esta entre parentesis a la derecha del "match" (en nuestro caso "caracter) con cada uno de los valores entre parentesis a la derecha del "case" (en nuestro caso serian todas las vocales en minuscula y mayuscula). Lo que hay entre un parentesis y otro es un "or". El "or" es litarelmente un "o" en castellano. En nuestro caso, el "or" pregunta si el caracter es igual a "a" o bien si es igual a "A" o bien si es igual a "e", etc. Conque solo uno de los casos sea verdadero, entonces la pregunta devuelve "verdadero". 
+        print("El caracter ingresado es una vocal")
+    case __: #Este case es un comodin. Si la variable del "match" no es igual a ningun valor en ningun case de toda la estructura, entonces ejecuta el codigo indentado. Basicamente si no entra por ningun "case" entonces va a entrar por aca.
+        print("El caracter ingresado no es una vocal")
+#El "match" solo funciona en las versiones de python 3.10 en adelante, asi que si usan una version de python mas vieja (como la mayoria de los interpretes online) esto no va a funcionar.
