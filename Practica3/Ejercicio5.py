@@ -1,0 +1,13 @@
+def facturar(factura, iva=0.21): #Esta funcion recibe dos datos: la factura y el iva. La razon por la cual el iva tiene asignado un valor (0.21) es porque si nosotros NO enviamos ningun valor para el iva cuando llamamos la funcion, entonces la funcion asume que el iva tiene el valor que le pusimos a la derecha del igual (en nuestro caso 0.21)
+    if (iva >= 1): #Aca pregunto si el iva es mayor que 1, porque si es asi, significa que ingresaron un numero en lugar de directamente el porcentaje, asi que lo tenemos que transformar a un porcentaje (si no ingresan iva, el valor por defecto que pusimos es menor a 1, es 0.21, asi que jamas entra a este codigo indentado). Si ingresan un 50 para el iva, no tenemos que multiplicar la factura por 50, tenemos que incrementar la factura en un 50%. La forma mas facil de hacer esto es utilizar decimales, es decir, dividimos el numero entero por 100, al resultado le sumamos 1 y despues le multiplicamos la factura.
+        iva /= 100 #Si ingresamos 50 para el iva esto nos va a devolver 0.5
+    iva += 1 #En el caso anterior, a 0.5 le sumamos 1 para que quede 1.5
+    return (factura * iva) #Y aca simplemente multiplicamos los valores: La factura multiplicado por 1.5 va a incrementar su valor en un 50% que era lo que queriamos. Pueden probar ingresando otros valores y van a ver que funciona.
+
+factura = int(input("Ingrese la factura a pagar: "))
+iva = input("Ingrese el iva: ") #Aca no transformamos el valor ingresado en un entero. Por que? Porque puede ser que la persona no ingrese iva, y si no ingresas nada y tratas de convertir nada a entero el programa te tira error.
+if (iva == ""): #Aca preguntamos si la persona ingreso ALGO en el iva. Si no ingreso nada, entonces vamos a asumir que quiere usar el iva por defecto (osea 0.21)
+    factura = facturar(factura) #Aca llamamos a la funcion facturar y solo le pasamos un unico parametro, la factura. Por que? Porque queremos que la funcion utilice el parametro del iva por defecto (el 0.21). Si aca le madaramos la variable "iva" primero que el programa explota porque "iva" esta vacio y segundo que no tomaria el valor por defecto (0.21) que es lo que queremos que haga.
+else:
+    factura = facturar(factura, int(iva)) #Aca llamamos a la funcion facturar y le pasamos el valor de la factura y ademas el iva. Como no transformamos el iva a entero cuando recibimos su valor del usuario lo tenemos que hacer aca. Por que? Porque sino lo que le estamos mandando a la funion es un texto y no un numero (la funcion va a tirar error).
+print(f"Usted debe facturar {factura}$") #Siempre usando formateo de texto para que quede mejor.
