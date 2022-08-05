@@ -1,0 +1,9 @@
+Período: 1.1.2000 al 5.1.2000
+Total de minutos: 675
+Promedio en minutos: 135.00 minutos por dia
+-- Detalle:
+1.1.2000: 25
+2.1.2000: 50
+3.1.2000: 50
+4.1.2000: 200
+5.1.2000: 350
