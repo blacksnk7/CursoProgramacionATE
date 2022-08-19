@@ -1,0 +1,7 @@
+Período: 3.10.2020 al 5.10.2020
+Total de minutos: 225
+Promedio en minutos: 75.00 minutos por dia
+-- Detalle:
+3.10.2020: 50
+4.10.2020: 75
+5.10.2020: 100

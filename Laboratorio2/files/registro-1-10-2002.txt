@@ -1,0 +1,9 @@
+Período: 1.10.2002 al 5.10.2002
+Total de minutos: 425
+Promedio en minutos: 85.00 minutos por dia
+-- Detalle:
+1.10.2002: 25
+2.10.2002: 50
+3.10.2002: 50
+4.10.2002: 100
+5.10.2002: 200

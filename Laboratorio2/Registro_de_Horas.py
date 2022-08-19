@@ -2,7 +2,7 @@ import os
 from datetime import datetime
 
 def save_info(dates, start_date):
-    path = os.path.join(os.getcwd(), "files", start_date + ".txt")
+    path = os.path.join(os.getcwd(), "files", "registro-" + start_date.replace(".", "-") + ".txt")
     print(path)
     with open(path,'w',encoding = 'utf-8') as f:
         f.write(f"Período: {start_date} al {list(dates.keys())[-1]}\n")
