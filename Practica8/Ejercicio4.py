@@ -6,7 +6,7 @@ class Pila:
     def desapilar(self):
         return self.elements.pop(-1)
     def top(self):
-        return self.elements[0]
+        return self.elements[-1]
     def vacia(self):
         if (len(self.elements) > 0):
             return False
