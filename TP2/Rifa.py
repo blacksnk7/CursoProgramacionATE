@@ -45,18 +45,25 @@ def UI_init(ui):
     it from scratch
     '''
     column_num, row_num = 0, 0
-    label_name = ttk.Label(ui.mainframe, text="Enter your name: ").grid(column=column_num, row=row_num, sticky=tk.W)
+    label_name = ttk.Label(ui.mainframe, text="Enter your name: ")
+    label_name.grid(column=column_num, row=row_num, sticky=tk.W)
     name = tk.StringVar()
-    entry_name = ttk.Entry(ui.mainframe, width=35, textvariable=name).grid(column=column_num+1, row=row_num, sticky=(tk.E))
+    entry_name = ttk.Entry(ui.mainframe, width=35, textvariable=name)
+    entry_name.grid(column=column_num+1, row=row_num, sticky=(tk.E))
     row_num += 1
-    label_number = ttk.Label(ui.mainframe, text="Choose your number: ").grid(column=column_num, row=row_num, sticky=tk.W)
+    label_number = ttk.Label(ui.mainframe, text="Choose your number: ")
+    label_number.grid(column=column_num, row=row_num, sticky=tk.W)
     number = tk.StringVar()
-    combobox_number = ttk.Combobox(ui.mainframe, height=5, textvariable=number, values=c.free_numbers(), width=8).grid(column=column_num+1, row=row_num, sticky=tk.W)
+    combobox_number = ttk.Combobox(ui.mainframe, height=5, textvariable=number, values=c.free_numbers(), width=8)
+    combobox_number.grid(column=column_num+1, row=row_num, sticky=tk.W)
     row_num += 1
-    button_buy_number = ttk.Button(ui.mainframe, text="Buy number", command=partial(take_number, c, name, number, ui)).grid(column=column_num, row=row_num, sticky=tk.W)
-    label_contestants = ttk.Label(ui.mainframe, text="Contestants:").grid(column=2, row=0, sticky=tk.W)
+    button_buy_number = ttk.Button(ui.mainframe, text="Buy number", command=partial(take_number, c, name, number, ui))
+    button_buy_number.grid(column=column_num, row=row_num, sticky=tk.W)
+    label_contestants = ttk.Label(ui.mainframe, text="Contestants:")
+    label_contestants.grid(column=2, row=0, sticky=tk.W)
     listbox_choices = tk.StringVar(value=c.get_name_number_pairs())
-    listbox_contestants = tk.Listbox(ui.mainframe, listvariable=listbox_choices).grid(column=column_num+2, row=1, sticky=tk.W)
+    listbox_contestants = tk.Listbox(ui.mainframe, listvariable=listbox_choices)
+    listbox_contestants.grid(column=column_num+2, row=1, sticky=tk.W)
 
 
 c = Contest(10)

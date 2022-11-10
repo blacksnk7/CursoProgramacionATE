@@ -26,12 +26,15 @@ def download_file(link, column_num, row_num, file_type):
 
 ui = UI_root("YouTube Converter")
 column_num, row_num = 0, 0
-label = ttk.Label(ui.mainframe, text="Paste the youtube video URL: ").grid(column=column_num, row=row_num, sticky=tk.W)
+label_url = ttk.Label(ui.mainframe, text="Paste the youtube video URL: ")
+label_url.grid(column=column_num, row=row_num, sticky=tk.W)
 link = tk.StringVar()
-entry = ttk.Entry(ui.mainframe, width=100, textvariable=link)
-entry.grid(column=column_num+1, row=row_num, sticky=(tk.E))
+entry_url = ttk.Entry(ui.mainframe, width=100, textvariable=link)
+entry_url.grid(column=column_num+1, row=row_num, sticky=(tk.E))
 row_num += 1
-download_mp4 = ttk.Button(ui.mainframe, text="Download file as mp4", command=partial(download_file, link, column_num+1, row_num, 'mp4')).grid(column=column_num, row=row_num, sticky=tk.W)
+download_mp4 = ttk.Button(ui.mainframe, text="Download file as mp4", command=partial(download_file, link, column_num+1, row_num, 'mp4'))
+download_mp4.grid(column=column_num, row=row_num, sticky=tk.W)
 row_num += 1
-download_mp4 = ttk.Button(ui.mainframe, text="Download file as mp3", command=partial(download_file, link, column_num+1, row_num, 'mp3')).grid(column=column_num, row=row_num, sticky=tk.W)
+download_mp4 = ttk.Button(ui.mainframe, text="Download file as mp3", command=partial(download_file, link, column_num+1, row_num, 'mp3'))
+download_mp4.grid(column=column_num, row=row_num, sticky=tk.W)
 ui.root.mainloop()

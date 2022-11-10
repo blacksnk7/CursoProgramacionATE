@@ -6,7 +6,8 @@ from tkinter import ttk
 #UI object for day/temperature
 class UI_day_temperature:
     def __init__(self, mainframe, day, column_num, row_num):
-        self.label = ttk.Label(mainframe, text=day + ":").grid(column=column_num, row=row_num, sticky=tk.W)
+        self.label = ttk.Label(mainframe, text=day + ":")
+        self.label.grid(column=column_num, row=row_num, sticky=tk.W)
         self.entry = ttk.Entry(mainframe, width=7, textvariable=tk.StringVar())
         self.entry.grid(column=column_num+1, row=row_num, sticky=(tk.E))
     def get_temp(self):
@@ -16,8 +17,10 @@ class UI_day_temperature:
 #UI Initialization
 def UI_initialization(mainframe):
     days = {"Lunes": 0, "Martes": 0, "Miercoles": 0, "Viernes": 0, "Sabado": 0, "Domingo": 0}
-    ttk.Label(mainframe, text="Dias:").grid(column=0, row=0, sticky=tk.W)
-    ttk.Label(mainframe, text="Temperaturas:").grid(column=1, row=0, sticky=tk.W)
+    label_days = ttk.Label(mainframe, text="Dias:")
+    label_days.grid(column=0, row=0, sticky=tk.W)
+    label_temp = ttk.Label(mainframe, text="Temperaturas:")
+    label_temp.grid(column=1, row=0, sticky=tk.W)
     column_num, row_num = 0, 1
     for key in days:
         ui_row = UI_day_temperature(mainframe, key, column_num, row_num)
@@ -28,7 +31,8 @@ def UI_initialization(mainframe):
     min = ttk.Label(mainframe, text="")
     min.grid(column=column_num, row=row_num+2, sticky=tk.W)   
     print(max)
-    ttk.Button(mainframe, text="Calcular temperatura maxima y minima", command=partial(calculate_temp, days, max, min)).grid(column=column_num, row=row_num, sticky=tk.W)
+    button_calculate = ttk.Button(mainframe, text="Calcular temperatura maxima y minima", command=partial(calculate_temp, days, max, min))
+    button_calculate.grid(column=column_num, row=row_num, sticky=tk.W)
 
 #Calculating temperature
 def calculate_temp(days, max, min):
